@@ -47,17 +47,12 @@ while True:
     converted_amount = sum_amount / CURRENCIES.get(user_currency) * CURRENCIES.get(conversion_currency)
     print(f'Вы получите: {round(converted_amount, 2)} {conversion_currency}')
 
-    finish = input('Хотите повторить рассчеты? Y/N')
+    finish = input('Хотите повторить рассчеты? Выберите: Y/N')
     if finish == 'N':
         break
-    elif finish != 'Y':
-        i = 2
-        while finish != 'Y' and i > 0:
-            print('Неверные данные...')
-            finish = input('Хотите повторить рассчеты? Выберите: Y/N')
-            i -= 1
-        print('Слишком много неправильных попыток')
-        break
+    while finish != 'Y':
+        print('Неверные данные...')
+        finish = input('Хотите повторить рассчеты? Выберите: Y/N')
 
 
 
